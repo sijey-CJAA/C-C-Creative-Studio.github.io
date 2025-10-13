@@ -10,30 +10,51 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
   <style>
-    .navbar-nav {
-      margin: 0 auto; /* center navbar contents */
+    /* Make navbar transparent in hamburger (collapsed) mode */
+    @media (max-width: 992px) {
+
+      .navbar.bg-body-tertiary,
+      .navbar.bg-white {
+        background-color: transparent !important;
+        box-shadow: none !important;
+      }
+
+      /* Optional: make links readable on light backgrounds */
+      .navbar-nav .nav-link {
+        color: #000 !important;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 8px;
+        margin: 4px 0;
+        padding: 6px 12px;
+      }
     }
 
-    .home {
-      height: 50vh; /* half of the viewport height */
-      padding: 3rem; /* equivalent to Bootstrap p-5 */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    /* Make all cards white */
+    .card {
+      background-color: #fff !important;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .home-img {
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      max-width: 100%;
+    /* Add a hover effect */
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      object-fit: cover;
     }
   </style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-white fixed-top mb-5 shadow">
     <div class="container">
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +72,49 @@
     </div>
   </nav>
 
-  <!-- FIRST SECTION -->
-  <div class="home" id="home">
-    <img src="expics/pic1.jpg" alt="Invitation Image" class="home-img">
-  </div>
+  <!-- 🏠 Home Section -->
+  <section id="home" class="container-fluid d-flex justify-content-center align-items-center bg-light mb-5"
+    style="height: 90vh; width: 100%; padding-top: 70px; padding-bottom: 5px;">
+    <img src="expics/pic1.jpg" class="img-fluid rounded shadow" alt="Invitation Image"
+      style="max-height: 100%; object-fit: cover;">
+  </section>
+
+
+  <!-- 🖼️ Gallery Section -->
+  <section id="gallery" class="container py-5">
+    <h2 class="text-center mb-5 fw-bold">Our Gallery</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="expics/pic2.jpg" class="card-img-top" alt="Gallery Image 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">Our Engagement</h5>
+            <p class="card-text">A beautiful memory captured forever.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="expics/pic3.jpg" class="card-img-top" alt="Gallery Image 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Cherished Moments</h5>
+            <p class="card-text">Every picture tells our love story.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="expics/pic4.jpg" class="card-img-top" alt="Gallery Image 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Forever Together</h5>
+            <p class="card-text">The start of our new journey together.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
