@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JAVASCRIPT PRACTICE 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container rounded-5 bg-black text-white text-center my-3 p-5">
+        <div class="row">
+            <div class="col">
+                <div class="h1">SIMPLE SHOP</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container rounded-5 bg-light my-3 p-5">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="h1">Shoes - ₱1500</div>
+                <div class="h3">
+                    Qty: <input type="number" id="shoesQty" value="0" min="0">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="h1">Clothes - ₱1000</div>
+                <div class="h3">
+                    Qty: <input type="number" id="clothesQty" value="0" min="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col">
+                <button class="btn btn-primary btn-lg" onclick="calculateTotal()">Calculate Total</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-primary text-white text-center rounded-5 my-3 p-5">
+        <div class="row">
+            <div class="col">
+                <h2 id="result"></h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            // Get the values from the input boxes
+            let shoesQty = document.getElementById("shoesQty").value;
+            let clothesQty = document.getElementById("clothesQty").value;
+
+            // Convert to numbers
+            shoesQty = Number(shoesQty);
+            clothesQty = Number(clothesQty);
+
+            // Set item prices
+            let shoesPrice = 1500;
+            let clothesPrice = 1000;
+
+            // Calculate total
+            let total = (shoesQty * shoesPrice) + (clothesQty * clothesPrice);
+
+            // Display result
+            document.getElementById("result").innerText = "Total: ₱" + total;
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

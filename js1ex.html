@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Shop</title>
+</head>
+<body>
+  <h2>My Shop</h2>
+
+  <div>
+    <p>Shoes - ₱1500 each</p>
+    Quantity: <input type="number" id="shoesQty" value="0" min="0">
+  </div>
+
+  <div>
+    <p>Shirt - ₱500 each</p>
+    Quantity: <input type="number" id="shirtQty" value="0" min="0">
+  </div>
+
+  <button onclick="calculateTotal()">Calculate Total</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    // This function runs when you click the button
+    function calculateTotal() {
+      // Get the values from the input boxes
+      let shoesQty = document.getElementById("shoesQty").value;
+      let shirtQty = document.getElementById("shirtQty").value;
+
+      // Convert to numbers (not text)
+      shoesQty = Number(shoesQty);
+      shirtQty = Number(shirtQty);
+
+      // Set item prices
+      let shoesPrice = 1500;
+      let shirtPrice = 500;
+
+      // Calculate total
+      let total = (shoesQty * shoesPrice) + (shirtQty * shirtPrice);
+
+      // Display result
+      document.getElementById("result").innerText = "Total: ₱" + total;
+    }
+  </script>
+</body>
+</html>
