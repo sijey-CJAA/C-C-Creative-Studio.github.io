@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAME (RPS)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container bg-black mt-5 p-4 rounded text-white text-center">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="h1">Rock Paper Scissors Game</div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-12 d-flex justify-content-center gap-3">
+
+                <!-- ROCK BUTTON -->
+                <div class="btn bg-white text-black" onclick="
+                    const randomNumber1 = Math.random();
+                    let computerMove1 = '';
+
+                    if (randomNumber1 < 1/3) computerMove1 = 'rock';
+                    else if (randomNumber1 < 2/3) computerMove1 = 'paper';
+                    else computerMove1 = 'scissors';
+
+                    let result1 = '';
+
+                    if (computerMove1 === 'rock') result1 = 'Tie.';
+                    else if (computerMove1 === 'paper') result1 = 'You lose.';
+                    else result1 = 'You win!';
+
+                    alert(`You picked: rock\nComputer picked: ${computerMove1}\n${result1}`);
+                ">ROCK</div>
+
+                <!-- PAPER BUTTON -->
+                <div class="btn bg-white text-black" onclick="
+                    const randomNumber2 = Math.random();
+                    let computerMove2 = '';
+
+                    if (randomNumber2 < 1/3) computerMove2 = 'rock';
+                    else if (randomNumber2 < 2/3) computerMove2 = 'paper';
+                    else computerMove2 = 'scissors';
+
+                    let result2 = '';
+
+                    if (computerMove2 === 'rock') result2 = 'You win!';
+                    else if (computerMove2 === 'paper') result2 = 'Tie.';
+                    else result2 = 'You lose.';
+
+                    alert(`You picked: paper\nComputer picked: ${computerMove2}\n${result2}`);
+                ">PAPER</div>
+
+                <!-- SCISSORS BUTTON -->
+                <div class="btn bg-white text-black" onclick="
+                    const randomNumber3 = Math.random();
+                    let computerMove3 = '';
+
+                    if (randomNumber3 < 1/3) computerMove3 = 'rock';
+                    else if (randomNumber3 < 2/3) computerMove3 = 'paper';
+                    else computerMove3 = 'scissors';
+
+                    let result3 = '';
+
+                    if (computerMove3 === 'rock') result3 = 'You lose.';
+                    else if (computerMove3 === 'paper') result3 = 'You win!';
+                    else result3 = 'Tie.';
+
+                    alert(`You picked: scissors\nComputer picked: ${computerMove3}\n${result3}`);
+                ">SCISSORS</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
